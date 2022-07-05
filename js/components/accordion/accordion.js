@@ -1,7 +1,7 @@
-import UI from '../base/ui-base.js';
-import EventHandler from '../_dependencyvendor/event-handler.js';
+import UI from '../../base/ui-base.js';
+import EventHandler from '../../_dependencyvendor/event-handler.js';
 // eslint-disable-next-line no-unused-vars
-import { dataSetToObject, isVisible } from '../util/dom-util.js';
+import { dataSetToObject, isVisible } from '../../util/dom-util.js';
 
 // eslint-disable-next-line no-unused-vars
 const VERSION = '1.0.0';

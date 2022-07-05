@@ -16,7 +16,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="c-accordion c-accordion--type1" data-ui-accordion>
+        <!-- <div class="c-accordion c-accordion--type1" data-ui-accordion>
             <div class="c-accordion__box">
                 <div class="c-accordion__item">
                     <div class="c-accordion__head">
@@ -56,6 +56,17 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+        <div class="tabs" data-ui-tabs>
+            <div class="tabs__head">
+                <button class="tabs__button" aria-expanded="false" aria-controls="tabs_content1" id="tabs_head1">탭1</button>
+                <button class="tabs__button" aria-expanded="false" aria-controls="tabs_content2" id="tabs_head2">탭2</button>
+                <button class="tabs__button" aria-expanded="false" aria-controls="tabs_content3" id="tabs_head3">탭3</button>
+            </div>
+            <div class="tabs__panel" id="tabs_content1" aria-labelledby="tabs_head1"></div>
+            <div class="tabs__panel" id="tabs_content2" aria-labelledby="tabs_head2"></div>
+            <div class="tabs__panel" id="tabs_content3" aria-labelledby="tabs_head3"></div>
         </div>
         <script type="module" src="js/ui.js" defer></script>
     </body>

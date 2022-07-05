@@ -1,3 +1,4 @@
-import accordion from './accordion/accordion.js';
+import accordion from './components/accordion/accordion.js';
+import tabs from './components/panel/tabs.js';
 
-export { accordion };
+export { accordion, tabs };
