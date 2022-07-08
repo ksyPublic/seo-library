@@ -42,10 +42,43 @@ class tabs extends UI {
         };
     }
 
+    getElement() {
+        return this._element;
+    }
+
     /**
-     * 초기화
+     * 탭 전역 옵션
      */
-    init() {}
+    static GLOBAL_OPTIONS = {};
+    static DATA_NAME = 'tabs';
+
+    /**
+     * 탭 이벤트 네임
+     */
+    static get EVENT() {
+        return {
+            ALL: `eventAll.${NAME}`,
+            OPEN: `open.${NAME}`,
+            OPENED: `opened.${NAME}`,
+            CLOSE: `close.${NAME}`,
+            CLOSED: `closed.${NAME}`
+        };
+    }
+
+    static get NAME() {
+        return NAME;
+    }
+
+    /**
+     * 탭 초기화
+     */
+    init() {
+        this._initEvents();
+        this._current = null;
+        this._before = null;
+        this._defaultActive();
+        return this;
+    }
 
     /**
      * 탭 제거
@@ -55,7 +88,9 @@ class tabs extends UI {
     /**
      * 탭 아이템 오픈
      */
-    open() {}
+    open() {
+        this._open();
+    }
 
     /**
      * 탭 아이템 전체 오픈
@@ -76,12 +111,23 @@ class tabs extends UI {
      * 탭 옵션값 적용
      */
 
-    _initOptions() {}
+    _initOptions(options) {
+        this._options = {
+            ...defaultOptions,
+            ...tabs.GLOBAL_OPTIONS,
+            ...options,
+            ...dataSetToObject(this._element, dataAttrOptions, tabs.DATA_NAME)
+        };
+    }
 
     /**
      * 탭 이벤트 초기화
      */
-    _initEvents() {}
+    _initEvents() {
+        EventHandler.on(this._element, super._eventName('click'), (event) => {
+            console.log('????', event);
+        });
+    }
 
     /**
      * 탭 열기
@@ -92,6 +138,14 @@ class tabs extends UI {
      * 탭 닫기
      */
     _close() {}
+
+    /**
+     * @private
+     * defaultActive Open
+     * defaultActive 옵션 사용 시 openClass 이름으로 open은 처리가 되지 않는다.
+     * @returns
+     */
+    _defaultActive() {}
 }
 
 export default tabs;

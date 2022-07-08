@@ -82,6 +82,7 @@ export const dataSetToObject = (element, dataAttrConfig, prefix = '') => {
             }
         }
     }
+
     return config;
 };
 

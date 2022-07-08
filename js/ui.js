@@ -23,7 +23,7 @@ const initialize = () => {
     UIInitializer('[data-ui-accordion]', accordion);
 
     // 탭
-    UIInitializer('[data-ui-accordion]', tabs);
+    UIInitializer('[data-ui-tabs]', tabs);
 
     return 'initialized';
 };
